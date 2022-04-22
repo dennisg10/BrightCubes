@@ -25,3 +25,9 @@ resource "azurerm_storage_container" "tfstate_modules_networks" {
   container_access_type = "private"
 }
 
+# Create Container Terraform for nwservices
+resource "azurerm_storage_container" "tfstate_nwservices" {
+  name                  = "nwservices"
+  storage_account_name  = azurerm_storage_account.storageterraform.name
+  container_access_type = "private"
+}
