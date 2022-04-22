@@ -20,8 +20,8 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
 
   active_active = false
   enable_bgp    = false
-  sku           = "Basic"
-  generation    = "Generation1"
+  sku           = "VpnGw2"
+  generation    = "Generation2"
 
   ip_configuration {
     name                          = "vnetGatewayConfig"
@@ -32,11 +32,9 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
 
   vpn_client_configuration {
     address_space = ["172.22.200.0/23"]
+  }
 
-  
+tags = var.tags
 
-  tags = var.tags
-
-}
 }
 
